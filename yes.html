@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aku Mau ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="container">
+        <h1>Aku Mau ❤️</h1>
+        <p>
+            Terima kasih telah menerima perasaanku. Kamu adalah cinta dalam setiap langkahku. Bersamamu, aku merasa dunia ini begitu indah. Setiap detik yang kita habiskan bersama adalah momen yang tak ternilai harganya. Aku berjanji untuk selalu menjaga dan mencintaimu sepenuh hati. ❤️
+        </p>
+    </div>
+    <audio id="backsound" loop autoplay>
+        <source src="https://files.catbox.moe/geihwd.mp3"  type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        // Falling hearts effect
+        function createFallingHearts() {
+            for (let i = 0; i < 100; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.classList.add('falling-heart');
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+                    document.body.appendChild(heart);
+
+                    // Remove the heart after animation ends
+                    heart.addEventListener('animationend', () => {
+                        heart.remove();
+                    });
+                }, i * 100);
+            }
+        }
+
+        // Start falling hearts
+        createFallingHearts();
+    </script>
+</body>
+</html>
